@@ -1,0 +1,15 @@
+1. Vad är pull respektive push?
+   - `pull`: Kommandot `git pull` används för att hämta och slå samman förändringar från en fjärrserver (remote repository) till din lokala kopia av koden. Det uppdaterar din lokala kopia med de senaste ändringarna från servern.
+   - `push`: Kommandot `git push` används för att skicka dina lokala ändringar till den fjärrservern så att andra kan få tillgång till dem. Med `git push` uppdaterar du alltså fjärrservern med dina senaste commit:ar.
+
+2. När använder man log respektive status?
+   - `log`: Kommandot `git log` visar historiken över tidigare commit:ar, inklusive information om varje commit (exempelvis författare, datum och meddelande). Detta används för att spåra förändringar och se utvecklingen av projektet.
+   - `status`: Kommandot `git status` visar aktuell status på arbetskatalogen och staging-området. Det visar vilka filer som är ändrade, men inte ännu commit:ade eller vilka filer som är redo för commit. `status` används när man vill ha en överblick av vilka ändringar som är ocommittade eller o-pushade.
+
+3. Vad är en Git branch och varför är de viktiga?
+   - En branch är en separat linje av utveckling i ett Git-projekt. Den låter dig arbeta på en specifik funktion, buggfix eller experiment utan att påverka huvudkoden (ofta kallad "main" eller "master" branchen). Brancher är viktiga eftersom de gör det möjligt att arbeta parallellt på olika delar av koden och integrera förändringar utan att störa huvudkoden.
+
+4. Beskriv hur man rullar tillbaka till ett tidigare tillstånd i koden, och ange när du skulle använda dessa kommandon.
+   - `git checkout <commit-hash>`: Med detta kommando kan du gå tillbaka till ett tidigare commit-läge för att tillfälligt se hur koden såg ut då, utan att ändra historiken. Det används ofta för att felsöka eller granska tidigare versioner.
+   - `git reset --hard <commit-hash>`: Detta kommando återställer både staging-området och arbetskatalogen till ett specifikt tidigare commit-läge. Används när du vill gå tillbaka till en tidigare version och ta bort alla ändringar som skett därefter.
+   - `git revert <commit-hash>`: Detta kommando skapar en ny commit som återställer ändringar från en specifik commit. Till skillnad från `reset`, som ändrar historiken, behåller `revert` alla tidigare commit:ar. Detta används ofta för att ångra specifika förändringar utan att påverka hela historiken.
